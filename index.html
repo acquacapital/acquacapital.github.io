@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Acqua Capital — Liquidez inmediata y transparente para tu Pyme</title>
+  <meta name="description" content="Factoring 100% digital para Pymes en Chile. Convierte tus facturas en liquidez inmediata, con total transparencia y sin papeleos." />
+  <link rel="icon" type="image/png" href="logos/favicon.png" />
+
+  <!-- Tailwind CSS vía CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        fontFamily: { sans: ['Inter','ui-sans-serif','system-ui','sans-serif'] },
+        colors: {
+          aqua: '#0080c8', blue: { DEFAULT: '#0061a4' },
+          navy: { DEFAULT: '#004280', deep: '#00325f' },
+          inkc: '#1e1e2d', mist: '#f6f8fb', cloud: '#e9eef4',
+        },
+        borderRadius: { '4xl': '2rem' },
+      }},
+    };
+  </script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="font-sans text-inkc bg-white antialiased">
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="fixed top-0 inset-x-0 z-50 bg-white/80 backdrop-blur-md border-b border-cloud/70">
+    <nav class="max-w-7xl mx-auto px-5 sm:px-8 h-16 md:h-20 flex items-center justify-between">
+      <a href="index.html" class="flex items-center" aria-label="Acqua Capital — Inicio">
+        <img src="logos/logo.png" alt="Acqua Capital" class="h-11 md:h-14 w-auto" />
+      </a>
+
+      <div class="hidden md:flex items-center gap-9 text-[15px] font-medium text-inkc/80">
+        <a href="index.html" class="nav-link hover:text-navy transition-colors">Inicio</a>
+        <a href="about.html" class="nav-link hover:text-navy transition-colors">Nosotros</a>
+        <a href="contact.html" class="nav-link hover:text-navy transition-colors">Contacto</a>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <a href="https://app.acqua.capital/login" class="liquid-glass liquid-glass--sm !px-3 sm:!px-5" aria-label="Iniciar sesión">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
+          <span class="hidden sm:inline">Iniciar Sesión</span>
+        </a>
+        <button id="menuBtn" class="md:hidden p-2 text-navy" aria-label="Abrir menú">
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </nav>
+    <div id="mobileMenu" class="md:hidden hidden border-t border-cloud bg-white">
+      <div class="px-6 py-4 flex flex-col gap-1 text-[15px] font-medium">
+        <a href="index.html" class="py-2.5 text-inkc/80 hover:text-navy">Inicio</a>
+        <a href="about.html" class="py-2.5 text-inkc/80 hover:text-navy">Nosotros</a>
+        <a href="contact.html" class="py-2.5 text-inkc/80 hover:text-navy">Contacto</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===================== HERO ===================== -->
+    <section class="relative overflow-hidden pt-28 md:pt-36 pb-20 md:pb-28">
+      <!-- Fondo: imagen + overlay claro (reemplaza la URL por una imagen propia) -->
+      <div class="absolute inset-0 -z-20 bg-cover bg-center"
+           style="background-image:url('Img/edificio_mejorado.png');"></div>
+      <div class="absolute inset-0 -z-10"
+           style="background:radial-gradient(1100px 600px at 78% 0%, rgba(43,166,224,0.10), transparent 60%), linear-gradient(90deg, rgba(255,255,255,0.30) 0%, rgba(255,255,255,0.12) 45%, rgba(255,255,255,0) 100%);"></div>
+      <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-14 lg:gap-10 items-center">
+        <div class="reveal bg-white/65 backdrop-blur-md p-6 rounded-3xl lg:bg-white/45 lg:p-8 lg:-m-8">
+          <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-mist border border-cloud text-navy text-[13px] font-semibold mb-6">
+            <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+            Factoring 100% digital para Pymes en Chile
+          </span>
+          <h1 class="text-4xl sm:text-5xl lg:text-[3.4rem] leading-[1.08] font-extrabold tracking-tight text-navy">
+            Liquidez inmediata y transparente para tu Pyme
+          </h1>
+          <p class="mt-6 text-lg text-inkc/70 max-w-xl leading-relaxed">
+            Convierte tus facturas en capital de trabajo el mismo día. Un proceso
+            <strong class="text-navy font-semibold">100% digital</strong>, sin papeleos ni burocracia. Así de simple, así de transparente.
+          </p>
+          <div class="mt-9 flex flex-col sm:flex-row gap-4">
+            <a href="#simulador" class="liquid-glass text-base">
+              Simula tu factoring
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+            <a href="#como-funciona" class="liquid-glass liquid-glass--light text-base">Cómo funciona</a>
+          </div>
+          <div class="mt-12 grid grid-cols-3 gap-6 max-w-lg">
+            <div><p class="text-3xl font-extrabold text-navy">24h</p><p class="text-sm text-inkc/60 mt-1">Liquidez en tu cuenta</p></div>
+            <div><p class="text-3xl font-extrabold text-navy">0</p><p class="text-sm text-inkc/60 mt-1">Papeleos físicos</p></div>
+            <div><p class="text-3xl font-extrabold text-navy">100%</p><p class="text-sm text-inkc/60 mt-1">Transparentes</p></div>
+          </div>
+        </div>
+
+        
+      </div>
+    </section>
+
+    <!-- ===================== MÉTRICAS DE CONFIANZA ===================== -->
+    <section class="border-y border-cloud bg-mist">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8 py-12">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center reveal">
+          <div>
+            <p class="text-3xl sm:text-4xl font-extrabold text-navy">+85<span class="text-2xl align-top">años</span></p>
+            <p class="text-sm text-inkc/60 mt-1">De experiencia combinada del equipo</p>
+          </div>
+          <div>
+            <p class="text-3xl sm:text-4xl font-extrabold text-navy">24<span class="text-2xl align-top">h</span></p>
+            <p class="text-sm text-inkc/60 mt-1">Para tener tu liquidez disponible</p>
+          </div>
+          <div>
+            <p class="text-3xl sm:text-4xl font-extrabold text-navy">100%</p>
+            <p class="text-sm text-inkc/60 mt-1">Digital, sin papeleos ni notarías</p>
+          </div>
+          <div>
+            <p class="text-3xl sm:text-4xl font-extrabold text-navy">0</p>
+            <p class="text-sm text-inkc/60 mt-1">Letra chica</p>
+          </div>
+        </div>
+        <div class="mt-10 pt-8 border-t border-cloud flex flex-col md:flex-row items-center justify-center gap-x-8 gap-y-3 text-navy/70 font-semibold text-sm">
+          <span class="text-inkc/45 font-medium">Respaldo y cumplimiento normativo en Chile:</span>
+          <span>SII · Facturación electrónica</span><span class="hidden md:inline text-cloud">•</span>
+          <span>Registro de cesiones</span><span class="hidden md:inline text-cloud">•</span>
+          <span>Datos cifrados</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SIMULADOR TRANSPARENTE ===================== -->
+    <section id="simulador" class="py-20 md:py-28 bg-mist border-y border-cloud">
+      <div class="max-w-6xl mx-auto px-5 sm:px-8">
+        <div class="max-w-2xl mx-auto text-center reveal">
+          <span class="text-sm font-bold uppercase tracking-wider text-blue">Transparencia total</span>
+          <h2 class="mt-3 text-3xl sm:text-4xl font-extrabold tracking-tight text-navy">Simula tu factoring en segundos</h2>
+          <p class="mt-4 text-lg text-inkc/65">Sin registrarte y sin letra chica. Ajusta los valores y mira al instante cuánto recibes y cuánto cuesta.</p>
+        </div>
+
+        <div class="mt-12 grid lg:grid-cols-5 gap-6 lg:gap-8 reveal">
+          <!-- Controles -->
+          <div class="lg:col-span-3 bg-white rounded-4xl border border-cloud p-7 sm:p-9 space-y-8">
+            <div>
+              <div class="flex justify-between items-baseline mb-3">
+                <label for="simMonto" class="text-sm font-semibold text-inkc/70">Monto a anticipar</label>
+                <span id="simMontoOut" class="text-lg font-extrabold text-navy">$12.000.000</span>
+              </div>
+              <input id="simMonto" type="range" min="1000000" max="100000000" step="500000" value="12000000"
+                class="w-full accent-[#0061a4] cursor-pointer" />
+              <div class="flex justify-between text-xs text-inkc/45 mt-1"><span>$1M</span><span>$100M</span></div>
+            </div>
+            <div>
+              <div class="flex justify-between items-baseline mb-3">
+                <label for="simPlazo" class="text-sm font-semibold text-inkc/70">Plazo de pago de la factura</label>
+                <span id="simPlazoOut" class="text-lg font-extrabold text-navy">45 días</span>
+              </div>
+              <input id="simPlazo" type="range" min="30" max="120" step="5" value="45"
+                class="w-full accent-[#0061a4] cursor-pointer" />
+              <div class="flex justify-between text-xs text-inkc/45 mt-1"><span>30 días</span><span>120 días</span></div>
+            </div>
+            <div>
+              <div class="flex justify-between items-baseline mb-3">
+                <label for="simTasa" class="text-sm font-semibold text-inkc/70">Tasa mensual</label>
+                <span id="simTasaOut" class="text-lg font-extrabold text-navy">1,75%</span>
+              </div>
+              <input id="simTasa" type="range" min="1.5" max="2.5" step="0.05" value="1.75"
+                class="w-full accent-[#0061a4] cursor-pointer" />
+              <div class="flex justify-between text-xs text-inkc/45 mt-1"><span>1,5%</span><span>2,5%</span></div>
+            </div>
+          </div>
+
+          <!-- Resultado -->
+          <div class="lg:col-span-2 rounded-4xl bg-gradient-to-br from-blue via-navy to-navy-deep text-white p-7 sm:p-9 flex flex-col">
+            <p class="text-sm font-semibold text-white/60">Recibes hoy (estimado)</p>
+            <p id="simRecibe" class="text-4xl font-extrabold mt-1">$11.643.000</p>
+            <div class="mt-6 space-y-3 text-sm">
+              <div class="flex justify-between py-2 border-b border-white/15"><span class="text-white/60">Costo de financiamiento</span><span id="simInteres" class="font-semibold">$261.000</span></div>
+              <div class="flex justify-between py-2 border-b border-white/15"><span class="text-white/60">Comisión operacional</span><span id="simComision" class="font-semibold">$42.000</span></div>
+              <div class="flex justify-between py-2"><span class="text-white/60">Costo total</span><span id="simCosto" class="font-semibold text-aqua">$303.000</span></div>
+            </div>
+            <a href="https://app.acqua.capital/login" class="liquid-glass liquid-glass--dark w-full mt-7 text-base">Contactar</a>
+            <p class="text-xs text-white/40 mt-4 leading-relaxed">Valores referenciales. La tasa final depende de la evaluación de cada operación; te la mostramos siempre antes de aceptar.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ===================== BENEFICIOS / PILARES ===================== -->
+    <section class="py-20 md:py-28 bg-white">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8">
+        <div class="max-w-2xl mx-auto text-center reveal">
+          <span class="text-sm font-bold uppercase tracking-wider text-blue">Por qué elegir Acqua Capital</span>
+          <h2 class="mt-3 text-3xl sm:text-4xl font-extrabold tracking-tight text-navy">Tres promesas que cumplimos siempre</h2>
+          <p class="mt-4 text-lg text-inkc/65">No prometemos lo que no podemos dar. Estas son las tres cosas que sostienen cada operación con tu Pyme.</p>
+        </div>
+        <div class="mt-14 grid md:grid-cols-3 gap-6 lg:gap-8">
+        <div class="reveal bg-white rounded-4xl border border-cloud p-8 hover:shadow-[0_24px_50px_-24px_rgba(18,58,94,0.30)] transition-shadow">
+          <div class="flex items-center justify-between mb-6">
+            <div class="w-14 h-14 rounded-2xl bg-aqua/10 flex items-center justify-center text-navy">
+              <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            </div>
+            <span class="text-5xl font-extrabold text-cloud">01</span>
+          </div>
+          <h3 class="text-xl font-bold text-navy">Rapidez real</h3>
+          <p class="mt-3 text-inkc/65 leading-relaxed">Evaluamos y abonamos en horas, no en días. Tu capital de trabajo deja de esperar 30, 60 o 90 días.</p>
+        </div>
+        <div class="reveal bg-white rounded-4xl border border-cloud p-8 hover:shadow-[0_24px_50px_-24px_rgba(18,58,94,0.30)] transition-shadow">
+          <div class="flex items-center justify-between mb-6">
+            <div class="w-14 h-14 rounded-2xl bg-aqua/10 flex items-center justify-center text-navy">
+              <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <span class="text-5xl font-extrabold text-cloud">02</span>
+          </div>
+          <h3 class="text-xl font-bold text-navy">Transparencia total</h3>
+          <p class="mt-3 text-inkc/65 leading-relaxed">Confianza construida sobre números claros.</p>
+        </div>
+        <div class="reveal bg-white rounded-4xl border border-cloud p-8 hover:shadow-[0_24px_50px_-24px_rgba(18,58,94,0.30)] transition-shadow">
+          <div class="flex items-center justify-between mb-6">
+            <div class="w-14 h-14 rounded-2xl bg-aqua/10 flex items-center justify-center text-navy">
+              <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18"/></svg>
+            </div>
+            <span class="text-5xl font-extrabold text-cloud">03</span>
+          </div>
+          <h3 class="text-xl font-bold text-navy">100% digital</h3>
+          <p class="mt-3 text-inkc/65 leading-relaxed">Todo el proceso ocurre online, desde cualquier dispositivo. Sin filas, sin notarías y sin perder tiempo en trámites.</p>
+        </div>
+        </div>
+      </div>
+    </section>
+<!-- ===================== CITA / COMPROMISO ===================== -->
+    <section class="py-16 md:py-24 bg-white">
+      <div class="max-w-5xl mx-auto px-5 sm:px-8">
+        <div class="reveal rounded-4xl bg-gradient-to-br from-blue via-navy to-navy-deep text-white p-10 md:p-14 text-center relative overflow-hidden">
+          <div class="absolute -top-10 -right-10 w-48 h-48 rounded-full bg-aqua/20 blur-2xl"></div>
+          <div class="absolute -bottom-12 -left-12 w-56 h-56 rounded-full bg-aqua/10 blur-3xl"></div>
+          <p class="relative text-xl md:text-2xl font-medium leading-relaxed max-w-3xl mx-auto">
+            “Nuestro compromiso es simple: que cada Pyme acceda a su dinero rápido, con reglas claras
+            y sin letra chica. La transparencia no es un eslogan, es la forma en que trabajamos.”
+          </p>
+          <p class="relative mt-6 text-white/60 font-semibold">— Los socios fundadores de Acqua Capital</p>
+          <div class="relative mt-8"><a href="contact.html" class="liquid-glass liquid-glass--dark text-base">Conversemos</a></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FACTORING SIN ENDEUDARTE ===================== -->
+    <section class="py-16 md:py-20 bg-mist border-y border-cloud">
+      <div class="max-w-5xl mx-auto px-5 sm:px-8 text-center reveal">
+        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-navy">No es un crédito: es tu dinero, antes</h2>
+        <p class="mt-5 text-lg text-inkc/70 leading-relaxed max-w-3xl mx-auto">
+          El factoring adelanta facturas que <strong class="text-navy font-semibold">ya emitiste</strong>: no te endeudas ni
+          comprometes tu capacidad crediticia con el banco. Conviertes ventas a 30, 60 o 90 días en liquidez disponible hoy,
+          para pagar sueldos, proveedores o crecer sin frenar.
+        </p>
+        <div class="mt-8 grid sm:grid-cols-2 gap-4 text-left max-w-2xl mx-auto">
+          <div class="bg-white rounded-3xl border border-cloud p-6"><p class="font-bold text-navy">Sin deuda nueva</p><p class="mt-2 text-sm text-inkc/60">No aparece como crédito ni afecta tu evaluación bancaria.</p></div>
+          <div class="bg-white rounded-3xl border border-cloud p-6"><p class="font-bold text-navy">Pagas solo por lo que usas</p><p class="mt-2 text-sm text-inkc/60">Anticipa cuando lo necesites, sin montos mínimos forzados.</p></div>
+        </div>
+      </div>
+    </section>
+
+    
+
+    <!-- ===================== FAQ ===================== -->
+    <section class="py-20 md:py-24 bg-mist border-y border-cloud">
+      <div class="max-w-3xl mx-auto px-5 sm:px-8">
+        <div class="text-center reveal">
+          <span class="text-sm font-bold uppercase tracking-wider text-blue">Preguntas frecuentes</span>
+          <h2 class="mt-3 text-3xl sm:text-4xl font-extrabold tracking-tight text-navy">¿Recién partiendo con el factoring?</h2>
+          <p class="mt-4 text-lg text-inkc/65">Te lo explicamos claro, como todo en Acqua.</p>
+        </div>
+        <div class="mt-12 space-y-4 reveal">
+          <details class="group bg-white rounded-2xl border border-cloud px-6 py-5">
+            <summary class="flex items-center justify-between cursor-pointer list-none font-semibold text-navy">¿Qué es el factoring?<svg class="w-5 h-5 text-blue transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></summary>
+            <p class="mt-3 text-inkc/65 leading-relaxed">Es adelantar el pago de tus facturas por cobrar. En vez de esperar 30, 60 o 90 días a que tu cliente pague, nosotros te entregamos ese dinero hoy y cobramos una pequeña tasa por el adelanto.</p>
+          </details>
+          <details class="group bg-white rounded-2xl border border-cloud px-6 py-5">
+            <summary class="flex items-center justify-between cursor-pointer list-none font-semibold text-navy">¿El factoring es un crédito o una deuda?<svg class="w-5 h-5 text-blue transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></summary>
+            <p class="mt-3 text-inkc/65 leading-relaxed">No. Es la venta de un activo que ya tienes (tu factura), así que no te endeudas ni afectas tu capacidad crediticia con los bancos.</p>
+          </details>
+          <details class="group bg-white rounded-2xl border border-cloud px-6 py-5">
+            <summary class="flex items-center justify-between cursor-pointer list-none font-semibold text-navy">¿Cuánto demora en llegar el dinero?<svg class="w-5 h-5 text-blue transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></summary>
+            <p class="mt-3 text-inkc/65 leading-relaxed">Una vez aprobada y cedida la factura, transferimos el anticipo el mismo día hábil. Nuestro objetivo es que tengas tu liquidez disponible en menos de 24 horas.</p>
+          </details>
+          <details class="group bg-white rounded-2xl border border-cloud px-6 py-5">
+            <summary class="flex items-center justify-between cursor-pointer list-none font-semibold text-navy">¿Qué necesito para operar con Acqua?<svg class="w-5 h-5 text-blue transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></summary>
+            <p class="mt-3 text-inkc/65 leading-relaxed">Solo tu cuenta del SII para conectar tus facturas electrónicas. Te registras gratis, seleccionas las facturas a anticipar y listo: todo es 100% digital.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CTA FINAL ===================== -->
+    <section class="py-20 md:py-24 bg-white">
+      <div class="max-w-5xl mx-auto px-5 sm:px-8">
+        <div class="reveal rounded-4xl text-white p-10 md:p-14 text-center relative overflow-hidden">
+          <!-- Fondo: imagen + overlay azul (reemplaza la URL por una imagen propia) -->
+          <div class="absolute inset-0 bg-cover bg-center"
+               style="background-image:url('https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1600&q=80');"></div>
+          <div class="absolute inset-0" style="background:linear-gradient(135deg, rgba(31,111,178,0.92) 0%, rgba(18,58,94,0.92) 55%, rgba(13,44,71,0.95) 100%);"></div>
+          <div class="absolute -top-10 -right-10 w-48 h-48 rounded-full bg-aqua/20 blur-2xl"></div>
+          <div class="absolute -bottom-12 -left-12 w-56 h-56 rounded-full bg-aqua/10 blur-3xl"></div>
+          <h2 class="relative text-3xl sm:text-4xl font-extrabold tracking-tight">Tu Pyme necesita Acqua. Dale liquidez hoy mismo</h2>
+          <p class="relative mt-4 text-white/70 text-lg max-w-2xl mx-auto">Regístrate gratis y obtén tu primera simulación en minutos. Sin compromiso.</p>
+          <div class="relative mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="https://app.acqua.capital/login" class="liquid-glass liquid-glass--dark text-base">Crear mi cuenta</a>
+            <a href="contact.html" class="liquid-glass liquid-glass--dark text-base">Hablar con un ejecutivo</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="bg-navy-deep text-white/80">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-14">
+      <div class="grid md:grid-cols-4 gap-10">
+        <div class="md:col-span-2">
+          <img src="logos/logo.png" alt="Acqua Capital" class="h-12 md:h-14 w-auto bg-white/95 rounded-lg p-1.5" />
+          <p class="mt-4 max-w-sm text-white/60 leading-relaxed">Factoring 100% digital para Pymes en Chile. Liquidez inmediata, transparente y sin papeleos.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-4">Navegación</h4>
+          <ul class="space-y-2.5 text-white/60">
+            <li><a href="index.html" class="hover:text-white transition">Inicio</a></li>
+            <li><a href="about.html" class="hover:text-white transition">Nosotros</a></li>
+            <li><a href="contact.html" class="hover:text-white transition">Contacto</a></li>
+            <li><a href="https://app.acqua.capital/login" class="hover:text-white transition">Iniciar sesión</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-4">Contacto</h4>
+          <ul class="space-y-2.5 text-white/60">
+            <li><a href="mailto:contacto@acqua.capital" class="hover:text-white transition">contacto@acqua.capital</a></li>
+            <li><a href="tel:+56221234567" class="hover:text-white transition">+56 2 2123 4567</a></li>
+            <li>Av. Apoquindo 7331, Las Condes, Santiago</li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-12 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-white/50">
+        <p>© <span id="year"></span> Acqua Capital. Todos los derechos reservados. Diseñado por <a href="https://www.linkedin.com/company/maxivisionspa/" target="_blank" style="color: white;" >Maxivision.</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================== WHATSAPP FLOTANTE ===================== -->
+  <a href="https://wa.me/56912345678?text=Hola%20Acqua%20Capital,%20quiero%20información%20sobre%20factoring%20para%20mi%20Pyme"
+     target="_blank" rel="noopener"
+     class="wa-pulse fixed bottom-6 right-6 z-50 w-14 h-14 md:w-16 md:h-16 rounded-full bg-[#25D366] flex items-center justify-center shadow-lg hover:scale-105 transition-transform"
+     aria-label="Chatear por WhatsApp">
+    <svg class="w-7 h-7 md:w-8 md:h-8 text-white" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.518 5.263l-.999 3.648 3.97-1.041zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/></svg>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>
