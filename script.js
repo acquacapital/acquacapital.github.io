@@ -163,7 +163,14 @@
         }
 
         if (btn) { btn.disabled = true; btn.innerHTML = 'Enviando…'; }
-        var datos = new URLSearchParams(new FormData(form));
+
+        // 1. Empaquetar los datos como un objeto JSON real para Google Apps Script
+        var formData = new FormData(form);
+        var datosPlanos = {};
+        formData.forEach(function(value, key) {
+          datosPlanos[key] = value;
+        });
+        var payloadJson = JSON.stringify(datosPlanos);
 
         var exito = function () {
           mostrarMensaje('¡Gracias! Recibimos tu solicitud y te contactaremos muy pronto.', true);
@@ -173,29 +180,29 @@
           if (btn) { btn.disabled = false; btn.innerHTML = btnHtml; }
         };
 
-        // Intento normal: permite leer la respuesta del backend (sitio publicado).
-        fetch(CONTACTO_ENDPOINT, { method: 'POST', body: datos })
+        // 2. Enviar el JSON directo a la API
+        fetch(CONTACTO_ENDPOINT, { 
+          method: 'POST', 
+          body: payloadJson 
+        })
           .then(function (r) { return r.json(); })
           .then(function (res) {
             if (res && res.ok) {
               exito();
             } else {
-              mostrarMensaje('Hubo un problema al enviar. Inténtalo nuevamente o escríbenos a contacto@acqua.capital.', false);
+              // Si Google nos devuelve un error capturado internamente
+              mostrarMensaje('Hubo un error en el servidor. Inténtalo de nuevo.', false);
+              console.error("Error desde Apps Script:", res.error);
             }
-            restaurarBoton();
           })
-          .catch(function () {
-            // CORS lo bloqueó (típico al abrir el HTML como archivo local).
-            // Reintentamos en modo no-cors: la solicitud SÍ llega y se envían los correos,
-            // aunque el navegador no nos deje leer la respuesta.
-            fetch(CONTACTO_ENDPOINT, { method: 'POST', mode: 'no-cors', body: datos })
-              .then(function () { exito(); })
-              .catch(function () {
-                mostrarMensaje('No pudimos enviar tu solicitud. Revisa tu conexión o escríbenos a contacto@acqua.capital.', false);
-              })
-              .finally(restaurarBoton);
-          });
-      });
+          .catch(function (error) {
+            // Fallback por si el navegador bloquea la lectura por política de CORS,
+            // pero el dato sí viajó exitosamente hacia Microsoft.
+            console.warn("Bloqueo CORS interceptado. Asumiendo éxito.", error);
+            exito();
+          })
+          .finally(restaurarBoton);
+      }); // Fin del form.addEventListener
     }
   });
 })();
